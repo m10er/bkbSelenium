@@ -7,7 +7,7 @@ Feature: BKB Contact Form
     * User navigates to BKB contact page
     * User accepts the cookie notification
 
-  @dene
+  @negative
   Scenario: Submit consultation request
     When user selects "Consultation request" option
     And selects "Konten und Karten" as topic
