@@ -162,4 +162,10 @@ public class BKBContactPage extends BasePage {
         return element.isDisplayed();
     }
 
+    public boolean isErrorBirthdayMessageDisplayed(){
+        scrollIntoView(birthdayInput);
+        WebElement element = driver.findElement(birthdayInput).findElement(By.xpath("following-sibling::span[1]//span"));
+        System.out.println(element.getText());;
+        return element.isDisplayed();
+    }
 }

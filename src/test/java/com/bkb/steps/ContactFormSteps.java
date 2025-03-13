@@ -135,4 +135,16 @@ public class ContactFormSteps {
         Assert.assertTrue(contactPage.isErrorPhoneMessagesDisplayed());
 
     }
+
+    @Then("should see birthday error message")
+    public void shouldSeeBirthdayErrorMessage() {
+        Assert.assertTrue(contactPage.isErrorBirthdayMessageDisplayed());
+    }
+
+    @Given("user enters as a birthday {string}")
+    public void userEntersAsABirthday(String birthday) {
+        ContactInfo contactInfo = new ContactInfo();
+        contactInfo.setBirthday(birthday);
+        contactPage.fillPersonalInformation(contactInfo);
+    }
 }

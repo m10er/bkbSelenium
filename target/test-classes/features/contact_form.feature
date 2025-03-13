@@ -7,7 +7,7 @@ Feature: BKB Contact Form
     * User navigates to BKB contact page
     * User accepts the cookie notification
 
-  @dene
+  @negative
   Scenario: Submit consultation request
     When user selects "Consultation request" option
     And selects "Konten und Karten" as topic
@@ -73,4 +73,16 @@ Feature: BKB Contact Form
       | phoneNumber          |
       | ph123214322          |
       | ?>324324322          |
+
+
+  @dene
+  Scenario Outline: Form submission with invalid phone number
+    Given user enters as a birthday "<invalid birthday>"
+    When submits the form
+    Then should see birthday error message
+    Examples:
+      |invalid birthday      |
+      | birthday             |
+      | 12345677888          |
+      | ?%43@43              |
 
